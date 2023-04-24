@@ -1,0 +1,17 @@
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\obj\Debug\net7.0\ConsoleApp.csproj.AssemblyReference.cache
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\obj\Debug\net7.0\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\obj\Debug\net7.0\ConsoleApp.AssemblyInfoInputs.cache
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\obj\Debug\net7.0\ConsoleApp.AssemblyInfo.cs
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\obj\Debug\net7.0\ConsoleApp.csproj.CoreCompileInputs.cache
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\bin\Debug\net7.0\ConsoleApp.exe
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\bin\Debug\net7.0\ConsoleApp.deps.json
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\bin\Debug\net7.0\ConsoleApp.runtimeconfig.json
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\bin\Debug\net7.0\ConsoleApp.dll
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\bin\Debug\net7.0\ConsoleApp.pdb
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\bin\Debug\net7.0\Newtonsoft.Json.dll
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\obj\Debug\net7.0\ConsoleApp.csproj.CopyComplete
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\obj\Debug\net7.0\ConsoleApp.dll
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\obj\Debug\net7.0\refint\ConsoleApp.dll
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\obj\Debug\net7.0\ConsoleApp.pdb
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\obj\Debug\net7.0\ConsoleApp.genruntimeconfig.cache
+S:\repositoryGitHub\GameSale-Dm-C#\GameSale-Dm-C#\ConsoleApp\ConsoleApp\obj\Debug\net7.0\ref\ConsoleApp.dll
