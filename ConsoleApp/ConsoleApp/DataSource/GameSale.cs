@@ -1,4 +1,4 @@
-﻿namespace PopularVideoGames.DataSource;
+﻿namespace ConsoleApp.DataSource;
 
 public class GameSale
 {
@@ -6,12 +6,6 @@ public class GameSale
     {
        var games = ProcessCsv($"{Directory.GetCurrentDirectory()}/../../../DataSource/vgsales.csv");
        return games;
-        foreach (var game in games)
-        {
-            Console.WriteLine(game.Name + ' ' + game.Platform);
-        }
-
-        Console.ReadLine();
     }
 
     private static List<Game> ProcessCsv(string path)
@@ -38,7 +32,10 @@ public class Game
     public string Global_Sales { get; set; }
 
 
-    internal static Game ParseRow(string row)
+///
+/// Prend une chaîne de caractères représentant une ligne de données CSV et retourne un objet Game
+///
+internal static Game ParseRow(string row)
     {
         var columns = row.Split(',');
         return new Game()

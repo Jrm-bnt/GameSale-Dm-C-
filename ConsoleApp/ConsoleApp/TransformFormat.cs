@@ -1,12 +1,7 @@
-﻿using System;
-// using DataSources;
-using System.Linq;
-using System.IO;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using PopularVideoGames.DataSource;
+
+using ConsoleApp.DataSource;
 
 namespace ConsoleApp
 
@@ -17,7 +12,6 @@ namespace ConsoleApp
         {
             GameSale gameSale = new GameSale();
             var gameSaleData = gameSale.GetGameSaleData();
-
 
             Console.WriteLine("En quoi voulez-vous transformer votre src de données ?");
             Console.WriteLine("1 - JSON");
