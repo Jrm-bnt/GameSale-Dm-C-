@@ -149,7 +149,7 @@ namespace ConsoleApp
             var myXmlGameSale =
                 from element in lines.Descendants("GameSale")
                 where element.Element(attribute).Value.Contains(input, StringComparison.CurrentCultureIgnoreCase)
-                orderby element.Element(orderBy)
+                orderby element.Element(orderBy).Value
                 select element;
 
             foreach (var game in myXmlGameSale)
