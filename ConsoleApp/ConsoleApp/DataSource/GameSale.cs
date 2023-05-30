@@ -22,14 +22,14 @@ public class Game
     public int Rank { get; set; }
     public string Name { get; set; }
     public string Platform { get; set; }
-    public string Year { get; set; }
+    public int Year { get; set; }
     public string Genre { get; set; }
     public string Publisher { get; set; }
-    public string NA_Sales { get; set; }
-    public string EU_Sales { get; set; }
-    public string JP_Sales { get; set; }
-    public string Other_Sales { get; set; }
-    public string Global_Sales { get; set; }
+    public int NA_Sales { get; set; }
+    public int EU_Sales { get; set; }
+    public int JP_Sales { get; set; }
+    public int Other_Sales { get; set; }
+    public int Global_Sales { get; set; }
 
 
     ///
@@ -43,14 +43,14 @@ public class Game
             Rank = int.Parse(columns[0]),
             Name = columns[1],
             Platform = columns[2],
-            Year = columns[3],
+            Year = int.Parse(columns[3]),
             Genre = columns[4],
             Publisher = columns[5],
-            NA_Sales = columns[6],
-            EU_Sales = columns[7],
-            JP_Sales = columns[8],
-            Other_Sales = columns[9],
-            Global_Sales = columns[10],
+            NA_Sales = int.Parse(columns[6]),
+            EU_Sales = int.Parse(columns[7]),
+            JP_Sales = int.Parse(columns[8]),
+            Other_Sales = int.Parse(columns[9]),
+            Global_Sales = int.Parse(columns[10]),
         };
     }
 }

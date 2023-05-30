@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using ConsoleApp;
 using System.Linq;
 using System.IO;
+using ConsoleApp;
 
 
 class Program
 {
     static void Main(string[] args)
     {
-        bool relaunch = true;
         Console.WriteLine("\nBienvenue sur les statistques de vente de jeux vidéo.");
-        while (relaunch)
+        while (true)
         {
             Console.WriteLine("1 - Création du fichier de donnée (Json / Xml / Txt)");
             Console.WriteLine("2 - Recherche de donnée aux formats Json / Xml / Txt");
@@ -29,7 +28,7 @@ class Program
                     search.Start();
                     break;
                 case "3":
-                    relaunch = false;
+                    Environment.Exit(0);
                     break;
             }
         }

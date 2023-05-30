@@ -12,8 +12,7 @@ namespace ConsoleApp
     {
         private string attribute;
         private string orderBy;
-        private string conditionLibre;
-        private string resultatConditionLibre;
+
 
         public void Start()
         {
@@ -51,7 +50,7 @@ namespace ConsoleApp
                     break;
             }
 
-            Console.WriteLine("Sur quel champs trier la rechercher ?");
+            Console.WriteLine("Sur quel champs trier la recherche ?");
             Console.WriteLine("1 - Rank");
             Console.WriteLine("2 - Name");
             Console.WriteLine("3 - Platform");
@@ -109,13 +108,12 @@ namespace ConsoleApp
 
         public void SearchJson()
         {
-            Console.WriteLine("Rechercher un jeu...");
-            string recherche = Console.ReadLine();
+            Console.WriteLine($"Entrer votre rechercher... ({attribute}) ");
+            string inputResult = Console.ReadLine();
 
-            var myJsonGameSale =
-                JObject.Parse(File.ReadAllText($"{Directory.GetCurrentDirectory()}../../../../Json/gameSale.json"));
+            var myJsonGameSale = JObject.Parse(File.ReadAllText($"{Directory.GetCurrentDirectory()}../../../../Json/gameSale.json"));
             var searchResult = from game in myJsonGameSale["gameSaleData"]
-                where ((string)game[attribute]).Contains(recherche, StringComparison.CurrentCultureIgnoreCase)
+                where ((string)game[attribute]).Contains(inputResult, StringComparison.CurrentCultureIgnoreCase)
                 orderby game[orderBy]
                 select game;
 
@@ -127,14 +125,14 @@ namespace ConsoleApp
 
         public void SearchTxt()
         {
-            Console.WriteLine("Rechercher un jeu...");
+            Console.WriteLine($"Entrer votre rechercher... ({attribute}) ");
             string input = Console.ReadLine();
             var myTxtGameSale =
-                from line in File.ReadAllLines($@"{Directory.GetCurrentDirectory()}../../../../Txt/gameSale.txt")
-                let containSearch = line.Contains(input, StringComparison.InvariantCultureIgnoreCase)
+                from games in File.ReadAllLines($@"{Directory.GetCurrentDirectory()}../../../../Txt/gameSale.txt")
+                let containSearch = games.Contains(input, StringComparison.InvariantCultureIgnoreCase)
                 where containSearch
-                orderby line.Contains(orderBy)
-                select line;
+                orderby games.Contains(orderBy)
+                select games;
 
             foreach (var game in myTxtGameSale)
             {
@@ -145,7 +143,7 @@ namespace ConsoleApp
 
         public void SearchXml()
         {
-            Console.WriteLine("Rechercher un jeu...");
+            Console.WriteLine($"Entrer votre rechercher... ({attribute}) ");
             string input = Console.ReadLine();
 
             var lines = XElement.Load($"{Directory.GetCurrentDirectory()}../../../../Xml/gameSale.xml");
