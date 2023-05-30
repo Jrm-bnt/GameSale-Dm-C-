@@ -32,21 +32,25 @@ namespace ConsoleApp
                     attribute = "Rank";
                     break;
                 case "2":
-                    attribute ="Name";
+                    attribute = "Name";
                     break;
                 case "3":
-                    attribute ="Platform";
+                    attribute = "Platform";
                     break;
                 case "4":
-                    attribute ="Year";
+                    attribute = "Year";
                     break;
                 case "5":
-                    attribute ="Genre";
+                    attribute = "Genre";
                     break;
                 case "6":
-                    attribute ="Publisher";
+                    attribute = "Publisher";
+                    break;
+                default:
+                    Start();
                     break;
             }
+
             Console.WriteLine("Sur quel champs trier la rechercher ?");
             Console.WriteLine("1 - Rank");
             Console.WriteLine("2 - Name");
@@ -61,19 +65,22 @@ namespace ConsoleApp
                     orderBy = "Rank";
                     break;
                 case "2":
-                    orderBy ="Name";
+                    orderBy = "Name";
                     break;
                 case "3":
-                    orderBy ="Platform";
+                    orderBy = "Platform";
                     break;
                 case "4":
-                    orderBy ="Year";
+                    orderBy = "Year";
                     break;
                 case "5":
-                    orderBy ="Genre";
+                    orderBy = "Genre";
                     break;
                 case "6":
-                    orderBy ="Publisher";
+                    orderBy = "Publisher";
+                    break;
+                default:
+                    orderBy = "Name";
                     break;
             }
 
@@ -82,7 +89,6 @@ namespace ConsoleApp
             Console.WriteLine("2 - XML");
             Console.WriteLine("3 - TXT");
             string reponseFormat = Console.ReadLine();
-
 
             switch (reponseFormat)
             {
@@ -95,18 +101,19 @@ namespace ConsoleApp
                 case "3":
                     SearchTxt();
                     break;
+                default:
+                    SearchJson();
+                    break;
             }
-
         }
-
-
 
         public void SearchJson()
         {
             Console.WriteLine("Rechercher un jeu...");
             string recherche = Console.ReadLine();
 
-            var myJsonGameSale = JObject.Parse(File.ReadAllText($"{Directory.GetCurrentDirectory()}../../../../Json/gameSale.json"));
+            var myJsonGameSale =
+                JObject.Parse(File.ReadAllText($"{Directory.GetCurrentDirectory()}../../../../Json/gameSale.json"));
             var searchResult = from game in myJsonGameSale["gameSaleData"]
                 where ((string)game[attribute]).Contains(recherche, StringComparison.CurrentCultureIgnoreCase)
                 orderby game[orderBy]
@@ -120,7 +127,6 @@ namespace ConsoleApp
 
         public void SearchTxt()
         {
-
             Console.WriteLine("Rechercher un jeu...");
             string input = Console.ReadLine();
             var myTxtGameSale =
@@ -129,7 +135,6 @@ namespace ConsoleApp
                 where containSearch
                 orderby line.Contains(orderBy)
                 select line;
-
 
             foreach (var game in myTxtGameSale)
             {
@@ -142,7 +147,6 @@ namespace ConsoleApp
         {
             Console.WriteLine("Rechercher un jeu...");
             string input = Console.ReadLine();
-
 
             var lines = XElement.Load($"{Directory.GetCurrentDirectory()}../../../../Xml/gameSale.xml");
 
@@ -157,6 +161,5 @@ namespace ConsoleApp
                 Console.WriteLine($"Game : {game}");
             }
         }
-
     }
 }

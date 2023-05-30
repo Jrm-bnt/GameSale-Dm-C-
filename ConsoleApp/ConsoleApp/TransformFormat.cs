@@ -1,6 +1,5 @@
 ﻿using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
-
 using ConsoleApp.DataSource;
 
 namespace ConsoleApp
@@ -13,7 +12,7 @@ namespace ConsoleApp
             GameSale gameSale = new GameSale();
             var gameSaleData = gameSale.GetGameSaleData();
 
-            Console.WriteLine("En quoi voulez-vous transformer votre src de données ?");
+            Console.WriteLine("En quoi voulez-vous transformer votre source de données ?");
             Console.WriteLine("1 - JSON");
             Console.WriteLine("2 - XML");
             Console.WriteLine("3 - TXT");
@@ -40,7 +39,7 @@ namespace ConsoleApp
 
             var gameSaleTxT = from data in gameSaleData
                 select
-                    $"Rank: {data.Rank} | Name: {data.Name} | Platform: {data.Name} | Year: {data.Year} | Genre: {data.Genre} | Publisher: {data.Publisher} | NA_Sales: {data.NA_Sales} | EU_Sales: {data.EU_Sales} | JP_Sales: {data.JP_Sales} | Other_Sales: {data.Other_Sales} | Global_Sales: {data.Global_Sales}";
+                    $"Rank: {data.Rank} | Name: {data.Name} | Platform: {data.Platform} | Year: {data.Year} | Genre: {data.Genre} | Publisher: {data.Publisher} | NA_Sales: {data.NA_Sales} | EU_Sales: {data.EU_Sales} | JP_Sales: {data.JP_Sales} | Other_Sales: {data.Other_Sales} | Global_Sales: {data.Global_Sales}";
             string allData = "";
             foreach (var game in gameSaleTxT)
             {
@@ -50,7 +49,7 @@ namespace ConsoleApp
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Txt", "gameSale.txt");
             File.WriteAllText(filePath, allData);
             Console.WriteLine(allData);
-            Console.WriteLine("\nLe fichier gameSale.txt a été créé dans le dossier Txt");
+            Console.WriteLine("\nLe fichier gameSale.txt a été créé dans le dossier Txt\n");
         }
 
         static void PrintXml(List<Game> gameSaleData)
@@ -73,7 +72,7 @@ namespace ConsoleApp
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Xml", "gameSale.xml");
             File.WriteAllText(filePath, XML.ToString());
             Console.Write(XML.ToString());
-            Console.WriteLine("\nLe fichier gameSale.xml a été créé dans le dossier Xml");
+            Console.WriteLine("\nLe fichier gameSale.xml a été créé dans le dossier Xml\n");
         }
 
         static void PrintJson(List<Game> gameSaleData)
@@ -97,7 +96,7 @@ namespace ConsoleApp
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Json", "gameSale.json");
             File.WriteAllText(filePath, Json.ToString());
             Console.Write(Json.ToString());
-            Console.WriteLine("\nLe fichier gameSale.json a été créé dans le dossier Json");
+            Console.WriteLine("\nLe fichier gameSale.json a été créé dans le dossier Json\n");
         }
     }
 }
